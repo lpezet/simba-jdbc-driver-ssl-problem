@@ -8,9 +8,10 @@ import javax.net.ssl.HttpsURLConnection;
 public class SSLTest {
 
   public void check1() {
+    System.out.println("######################### CHECK1: START ##########################");
     try {
       URL url = new URL(
-          "https://pipelinesghubeus9.actions.githubusercontent.com");
+          "https://pipelinesghubeus9.actions.githubusercontent.com/abcdef/00000000-0000-0000-0000-000000000000/_apis/distributedtask/hubs/Actions/plans/abcde-1234-abcde-12345/jobs/12345-abcde-12345-abcde/idtoken?api-version=2.0&audience=https%3A%2F%2Fiam.googleapis.com%2F***");
       HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
       connection.connect();
 
@@ -31,26 +32,38 @@ public class SSLTest {
       }
     } catch (Exception e) {
       e.printStackTrace();
+    } finally {
+      System.out.println("######################### CHECK1: END ##########################");
     }
   }
 
-  public void simbaTest() throws Exception {
-    String connectionUrl = "jdbc:bigquery://https://googleapis.com/bigquery/v2:443;ProjectId=something;OAuthType=3;LogLevel=6;LogPath=/tmp/";
+  public void simbaTest() {
+    System.out.println("######################### SIMBATEST: START ##########################");
     Connection connection = null;
     try {
+      String connectionUrl = "jdbc:bigquery://https://googleapis.com/bigquery/v2:443;ProjectId=something;OAuthType=3;LogLevel=6;LogPath=/tmp/";
       com.simba.googlebigquery.jdbc.DataSource ds = new com.simba.googlebigquery.jdbc.DataSource();
       ds.setURL(connectionUrl);
       connection = ds.getConnection();
 
+    } catch (Exception e) {
+      e.printStackTrace();
     } finally {
+      System.out.println("######################### SIMBATEST: END ##########################");
+
       if (connection != null) {
-        connection.close();
+        try {
+          connection.close();
+        } catch (Exception e2) {
+          e2.printStackTrace();
+        }
       }
     }
   }
 
   public static void main(String[] args) throws Exception {
     SSLTest test = new SSLTest();
+    test.check1();
     test.simbaTest();
   }
 }
