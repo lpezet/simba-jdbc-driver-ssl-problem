@@ -1,0 +1,17 @@
+{
+  "type": "external_account",
+  "audience": "//iam.googleapis.com/***",
+  "subject_token_type": "urn:ietf:params:oauth:token-type:jwt",
+  "token_url": "https://sts.googleapis.com/v1/token",
+  "credential_source": {
+    "url": "https://pipelinesghubeus9.actions.githubusercontent.com/abcdef/00000000-0000-0000-0000-000000000000/_apis/distributedtask/hubs/Actions/plans/abcde-1234-abcde-12345/jobs/12345-abcde-12345-abcde/idtoken?api-version=2.0&audience=https%3A%2F%2Fiam.googleapis.com%2F***",
+    "headers": {
+      "Authorization": "***"
+    },
+    "format": {
+      "type": "json",
+      "subject_token_field_name": "value"
+    }
+  },
+  "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/***:generateAccessToken"
+}
