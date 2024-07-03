@@ -81,7 +81,7 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
 
 # Logs
 
-To get more logs, uncomment and edit as needed the following line in [run.sh](./run.sh):
+To get more logs, uncomment and edit as needed the following line in [entry.sh](./mount/entry.sh):
 ```bash
 #JAVA_ARGS+=(-Djavax.net.debug=ssl -Djava.security.debug=certpath)
 ```
