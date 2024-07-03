@@ -79,6 +79,11 @@ Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to
         ... 54 more
 ```
 
+# Comparison
+
+A separate test was added in [SSLTest.java](SSLTest.java) to compare URL connection and JDBC driver connection.
+Called *check1* it's run before the code replicating the PKIX issue.
+
 # Logs
 
 To get more logs, uncomment and edit as needed the following line in [entry.sh](./mount/entry.sh):
